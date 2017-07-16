@@ -1,1 +1,0 @@
-c:\Projects\Levart\Levart\Levart.UWP\Levart.UWP.csproj;x86
