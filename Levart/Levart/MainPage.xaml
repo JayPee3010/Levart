@@ -6,6 +6,7 @@
 
     <Label Text="Welcome to Levart, this is just some blank text, enjoy it &#xA;while its still here, Mofos!" 
            VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+           HorizontalOptions="Center" 
+           Margin="5,5,5,5"/>
 
 </ContentPage>
