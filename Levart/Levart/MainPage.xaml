@@ -4,8 +4,7 @@
              xmlns:local="clr-namespace:Levart"
              x:Class="Levart.MainPage">
 
-	<Label Text="Welcome to Levart, this is just some blank text, enjoy it while
-        its still here, Mofos!" 
+    <Label Text="Welcome to Levart, this is just some blank text, enjoy it &#xA;while its still here, Mofos!" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
 
