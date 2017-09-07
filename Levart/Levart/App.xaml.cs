@@ -13,8 +13,11 @@ namespace Levart
 		{
 			InitializeComponent();
 
-			MainPage = new Levart.MainPage();
+			MainPage = new NavigationPage(new MainPage());
+
 		}
+
+
 
 		protected override void OnStart ()
 		{
