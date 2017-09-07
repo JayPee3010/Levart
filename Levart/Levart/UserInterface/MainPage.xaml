@@ -2,11 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Levart"
-             x:Class="Levart.MainPage">
+             x:Class="Levart.MainPage"
+             Padding="0, 20, 0, 0">
 
-    <Label Text="Welcome to Levart, this is just some blank text, enjoy it &#xA;while its still here, Mofos!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" 
-           Margin="5,5,5,5"/>
 
+    <ContentPage.Content>
+        <ListView x:Name="listView"></ListView>    
+    </ContentPage.Content>
+    
 </ContentPage>
