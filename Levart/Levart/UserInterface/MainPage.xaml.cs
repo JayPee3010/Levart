@@ -34,13 +34,12 @@ namespace Levart
             InitializeComponent();
 
             albumListView.ItemsSource = ProductList;
-            
-
         }
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e) {
             if(e.SelectedItem != null) {
                 var selection = e.SelectedItem as Product;
+                ((ListView)sender).SelectedItem = null;
                 Navigation.PushAsync(new OverviewPage()); ;
             }
         }
