@@ -5,18 +5,19 @@
              x:Class="Levart.MainPage"
              Padding="0, 20, 0, 0">
 
-    <StackLayout>
-
-        <ListView x:Name="simpleListView"></ListView>
-
-        <ListView x:Name="boundListView">
+        <ListView x:Name="albumListView" ItemSelected="OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Name}"/>
+                    <ViewCell>
+                        <StackLayout Orientation ="Vertical" Padding="10">
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding UnitCost, StringFormat='${0}'}"
+                                   TextColor="Green"/>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </StackLayout>
 
-    
+
 </ContentPage>
