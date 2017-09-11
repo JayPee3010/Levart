@@ -3,13 +3,55 @@
     x:Class="Levart.UserInterface.OverviewPage">
 	<ContentPage.Content>
 <StackLayout>
-    <Grid>
+   <Grid BackgroundColor="Black">
+    <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>         
         </Grid.ColumnDefinitions>
+        <Button Grid.Row="0" Grid.Column="0" BackgroundColor="White" />
+        <Button Grid.Row="0" Grid.Column="1" BackgroundColor="White" />
+        <Button Grid.Row="0" Grid.Column="2" BackgroundColor="White" />
+        <Button Grid.Row="0" Grid.Column="3" BackgroundColor="White" />
+        <Button Grid.Row="1" Grid.Column="0" BackgroundColor="White" />
+        <Button Grid.Row="1" Grid.Column="1" BackgroundColor="White" />
+        <Button Grid.Row="1" Grid.Column="2" BackgroundColor="White" />
+        <Button Grid.Row="1" Grid.Column="3" BackgroundColor="White" />
+        <Button Grid.Row="2" Grid.Column="0" BackgroundColor="White" />
+        <Button Grid.Row="2" Grid.Column="1" BackgroundColor="White" />
+        <Button Grid.Row="2" Grid.Column="2" BackgroundColor="White" />
+        <Button Grid.Row="2" Grid.Column="3" BackgroundColor="White" />
+        <Button Grid.Row="3" Grid.Column="0" BackgroundColor="White" />
+        <Button Grid.Row="3" Grid.Column="1" BackgroundColor="White" />
+        <Button Grid.Row="3" Grid.Column="2" BackgroundColor="White" />
+        <Button Grid.Row="3" Grid.Column="3" BackgroundColor="White" />
+        <Button Grid.Row="4" Grid.Column="0" BackgroundColor="White" />
+        <Button Grid.Row="4" Grid.Column="1" BackgroundColor="White" />
+        <Button Grid.Row="4" Grid.Column="2" BackgroundColor="White" />
+        <Button Grid.Row="4" Grid.Column="3" BackgroundColor="White" />
+        <Button Grid.Row="5" Grid.Column="0" BackgroundColor="White" />
+        <Button Grid.Row="5" Grid.Column="1" BackgroundColor="White" />
+        <Button Grid.Row="5" Grid.Column="2" BackgroundColor="White" />
+        <Button Grid.Row="5" Grid.Column="3" BackgroundColor="White" />
+        <Button Grid.Row="6" Grid.Column="0" BackgroundColor="White" />
+        <Button Grid.Row="6" Grid.Column="1" BackgroundColor="White" />
+        <Button Grid.Row="6" Grid.Column="2" BackgroundColor="White" />
+        <Button Grid.Row="6" Grid.Column="3" BackgroundColor="White" />
+        <Button Grid.Row="7" Grid.Column="0" BackgroundColor="White" />
+        <Button Grid.Row="7" Grid.Column="1" BackgroundColor="White" />
+        <Button Grid.Row="7" Grid.Column="2" BackgroundColor="White" />
+        <Button Grid.Row="7" Grid.Column="3" BackgroundColor="White" />
     </Grid>
 </StackLayout>
 	</ContentPage.Content>
