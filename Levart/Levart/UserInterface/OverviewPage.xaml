@@ -8,6 +8,7 @@
     
 	<ContentPage.Content>
 <StackLayout>
+            <ScrollView>
    <Grid BackgroundColor="Black">
     <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
@@ -58,6 +59,7 @@
         <Button Grid.Row="7" Grid.Column="2" BackgroundColor="White" />
         <Button Grid.Row="7" Grid.Column="3" BackgroundColor="White" />
     </Grid>
+    </ScrollView>
 </StackLayout>
 	</ContentPage.Content>
 </ContentPage>
