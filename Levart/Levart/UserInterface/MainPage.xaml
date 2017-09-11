@@ -5,22 +5,24 @@
              x:Class="Levart.MainPage"
              Padding="0, 20, 0, 0">
 
-        <ListView x:Name="albumListView" ItemSelected="OnItemSelected" RowHeight="60" Header="Albums" HorizontalOptions="Center">
-            <ListView.Header>
-                <Label XAlign="Center" FontSize="Medium"  Text="Albums" />
-            </ListView.Header>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation ="Vertical" Padding="10">
-                            <Label XAlign="Center" Text="{Binding Name}"/>
-                            <Label XAlign="Center" Text="{Binding UnitCost, StringFormat='${0}'}"
-                                   TextColor="Green"/>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New"/>
+    </ContentPage.ToolbarItems>
+
+    <ListView x:Name="albumListView" ItemSelected="OnItemSelected"  HorizontalOptions="Center">
+        <!--ListView.Header>
+            <Label XAlign="Center" FontSize="Medium"  Text="Albums" />
+        </-->
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation ="Vertical" Padding="10">
+                        <Label XAlign="Center" Text="{Binding Name}"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 
 
 </ContentPage>
