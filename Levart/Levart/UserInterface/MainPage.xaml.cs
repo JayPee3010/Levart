@@ -31,6 +31,7 @@ namespace Levart
             Title = "Albums";
 
             albumListView.ItemsSource = ProductList;
+
         }
 
         // Click on a list item
@@ -38,7 +39,7 @@ namespace Levart
             if(e.SelectedItem != null) {
                 var selection = e.SelectedItem as Album;
                 ((ListView)sender).SelectedItem = null; // reset the selected item
-                Navigation.PushAsync(new OverviewPage()); ;
+                Navigation.PushAsync(new OverviewPage(Convert.ToString(albumListView.SelectedItem)));
             }
         }
 	}
