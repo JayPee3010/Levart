@@ -12,18 +12,8 @@ namespace Levart
         public App()
         {
             InitializeComponent();
-
-            //MainPage = new NavigationPage(new MainPage());
-            MainPage = new NavigationPage(new DetailPage());
-
-<<<<<<< HEAD
-
-        }
-=======
 			MainPage = new NavigationPage( new MainPage());
 		}
->>>>>>> 5571de3efd1763c5793679e69e606d497469effe
-
 
 
         protected override void OnStart()
