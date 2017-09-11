@@ -9,7 +9,7 @@ using Levart.UserInterface;
 
 namespace Levart
 {
-	public partial class MainPage : ContentPage
+    public partial class MainPage : ContentPage
     {
         public class Album {
             public int ID { get; set; }
@@ -33,6 +33,11 @@ namespace Levart
             albumListView.ItemsSource = AlbumList;
 
         }
+
+        private void MenuItem_OnClicked(object sender, EventArgs e) {
+            AlbumList.Add(new Album { ID = 6, Name = "Test" });
+        }
+
 
         // Click on a list item
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e) {
