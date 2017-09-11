@@ -9,39 +9,42 @@ using Levart.UserInterface;
 
 namespace Levart
 {
-	public partial class MainPage : ContentPage
+    public partial class MainPage : ContentPage
     {
-        public class Product {
+        public class Album {
             public int ID { get; set; }
             public string Name { get; set; }
-            public decimal UnitCost { get; set; }
         }
 
-        public static ObservableCollection<Product> ProductList = new ObservableCollection<Product> {
-            new Product { ID=1, Name="Widget", UnitCost=19.99m},
-            new Product { ID=2, Name="Whatzit", UnitCost=29.99m},
-            new Product { ID=3, Name="Gadget", UnitCost=39.99m},
-            new Product { ID=4, Name="Cog", UnitCost=49.99m},
-            new Product { ID=5, Name="Sprocket", UnitCost=59.99m}
+        public static ObservableCollection<Album> AlbumList = new ObservableCollection<Album> {
+            new Album { ID=1, Name="Default"},
+            new Album { ID=2, Name="  "},
+            new Album { ID=3, Name="Gadget"},
+            new Album { ID=4, Name="Cog"},
+            new Album { ID=5, Name="Sprocket"}
         };
-
-        public static ObservableCollection<string> ObservableStringList = new ObservableCollection<string> {
-            "One", "Two", "Three", "Four"
-        };
-
 
         public MainPage() {
+
             InitializeComponent();
 
-            albumListView.ItemsSource = ProductList;
-            
+            Title = "Albums";
+
+            albumListView.ItemsSource = AlbumList;
 
         }
 
+        private void MenuItem_OnClicked(object sender, EventArgs e) {
+            AlbumList.Add(new Album { ID = 6, Name = "Test" });
+        }
+
+
+        // Click on a list item
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e) {
             if(e.SelectedItem != null) {
-                var selection = e.SelectedItem as Product;
-                Navigation.PushAsync(new OverviewPage()); ;
+                var selection = e.SelectedItem as Album;
+                ((ListView)sender).SelectedItem = null; // reset the selected item
+                Navigation.PushAsync(new OverviewPage(selection.Name));
             }
         }
 	}
