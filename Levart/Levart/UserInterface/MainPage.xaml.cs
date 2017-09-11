@@ -32,11 +32,16 @@ namespace Levart
         public MainPage() {
             InitializeComponent();
 
-
-            simpleListView.ItemsSource = ObservableStringList;
-            boundListView.ItemsSource = ProductList;
+            albumListView.ItemsSource = ProductList;
             
 
+        }
+
+        void OnItemSelected(object sender, SelectedItemChangedEventArgs e) {
+            if(e.SelectedItem != null) {
+                var selection = e.SelectedItem as Product;
+                DisplayAlert("You selected", selection.Name, "OK");
+            }
         }
 	}
 }
