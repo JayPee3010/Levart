@@ -6,7 +6,7 @@
              Padding="0, 20, 0, 0">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="New"/>
+        <ToolbarItem Text="New" Clicked="MenuItem_OnClicked"/>
     </ContentPage.ToolbarItems>
 
     <ListView x:Name="albumListView" ItemSelected="OnItemSelected"  HorizontalOptions="Center">
