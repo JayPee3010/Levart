@@ -3,7 +3,7 @@
     x:Class="Levart.UserInterface.OverviewPage">
 
      <ContentPage.ToolbarItems>
-        <ToolbarItem Text="New"/>
+        <ToolbarItem Text="New" Clicked="OnNewPhotoClicked"/>
     </ContentPage.ToolbarItems>
     
 	<ContentPage.Content>

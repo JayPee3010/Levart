@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 using Xamarin.Forms;
 
@@ -30,6 +31,10 @@ namespace Levart.UserInterface
             Title = selectedItem;
         }
 
-       
+		async void OnNewPhotoClicked(object sender, EventArgs e)
+		{
+			var action = await DisplayActionSheet("ActionSheet: Do you wanna add a new photo?", "Cancel", null, "Camera", "Photo Libary");
+			Debug.WriteLine("Action: " + action);
+		}
     }
 }
