@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Levart.UserInterface;
 
 namespace Levart
 {
@@ -33,14 +34,13 @@ namespace Levart
             InitializeComponent();
 
             albumListView.ItemsSource = ProductList;
-            
-
         }
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e) {
             if(e.SelectedItem != null) {
                 var selection = e.SelectedItem as Product;
-                DisplayAlert("You selected", selection.Name, "OK");
+                //DisplayAlert("You selected", selection.Name, "OK");
+                Navigation.PushAsync(new OverviewPage());
             }
         }
 	}

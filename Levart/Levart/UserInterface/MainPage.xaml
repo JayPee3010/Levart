@@ -5,7 +5,7 @@
              x:Class="Levart.MainPage"
              Padding="0, 20, 0, 0">
 
-        <ListView x:Name="albumListView" ItemSelected="OnItemSelected">
+        <ListView x:Name="albumListView" ItemSelected="OnItemSelected" RowHeight="60">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
