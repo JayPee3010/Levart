@@ -16,7 +16,7 @@ namespace Levart
             public string Name { get; set; }
         }
 
-        public static ObservableCollection<Album> ProductList = new ObservableCollection<Album> {
+        public static ObservableCollection<Album> AlbumList = new ObservableCollection<Album> {
             new Album { ID=1, Name="Default"},
             new Album { ID=2, Name="  "},
             new Album { ID=3, Name="Gadget"},
@@ -30,7 +30,7 @@ namespace Levart
 
             Title = "Albums";
 
-            albumListView.ItemsSource = ProductList;
+            albumListView.ItemsSource = AlbumList;
 
         }
 
