@@ -1,73 +1,51 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using System.Threading.Tasks;
+using UIKit;
+using Foundation;
 
 namespace Levart.UserInterface
 {
     public partial class DetailPage : ContentPage
     {
-        //protected internal DetailPage()
-        //{
-            //imagePicker = new UIImagePickerController();
-            //imagePicker.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
-            //imagePicker.MediaTypes = UIImagePickerController.AvailableMediaTypes(UIImagePickerControllerSourceType.PhotoLibrary);
+        public class PicturePickerImplementation : IPicturePicker
+        {
+            TaskCompletionSource<Stream> taskCompletionSource;
+            UIImagePickerController imagePicker;
 
-            //imagePicker.FinishedPickingMedia += Handle_FinishedPickingMedia;
-            //imagePicker.Canceled += Handle_Canceled;
+            void OnImagePickerFinishedPickingMedia(object sender, UIImagePickerMediaPickedEventArgs args)
+            {
+                UIImage image = args.EditedImage ?? args.OriginalImage;
 
-            //NavigationController.PresentModalViewController(imagePicker, true);
+                if (image != null)
+                {
+                    // Convert UIImage to .NET Stream object
+                    NSData data = image.AsJPEG(1);
+                    Stream stream = data.AsStream();
 
-            //void Handle_FinishedPickingMedia(object sender, UIImagePickerMediaPickedEventArgs e)
-            //{
-            //    // determine what was selected, video or image
-            //    bool isImage = false;
-            //    switch (e.Info[UIImagePickerController.MediaType].ToString())
-            //    {
-            //        case "public.image":
-            //            Console.WriteLine("Image selected");
-            //            isImage = true;
-            //            break;
-            //        case "public.video":
-            //            Console.WriteLine("Video selected");
-            //            break;
-            //    }
+                    // Set the Stream as the completion of the Task
+                    taskCompletionSource.SetResult(stream);
+                }
+                else
+                {
+                    taskCompletionSource.SetResult(null);
+                }
+                imagePicker.DismissModalViewController(true);
+            }
 
-            //    // get common info (shared between images and video)
-            //    NSUrl referenceURL = e.Info[new NSString("UIImagePickerControllerReferenceUrl")] as NSUrl;
-            //    if (referenceURL != null)
-            //        Console.WriteLine("Url:" + referenceURL.ToString());
+            void OnImagePickerCancelled(object sender, EventArgs args)
+            {
+                taskCompletionSource.SetResult(null);
+                imagePicker.DismissModalViewController(true);
+            }
 
-            //    // if it was an image, get the other image info
-            //    if (isImage)
-            //    {
-            //        // get the original image
-            //        UIImage originalImage = e.Info[UIImagePickerController.OriginalImage] as UIImage;
-            //        if (originalImage != null)
-            //        {
-            //            // do something with the image
-            //            Console.WriteLine("got the original image");
-            //            imageView.Image = originalImage; // display
-            //        }
-            //    }
-            //    else
-            //    { // if it's a video
-            //      // get video url
-            //        NSUrl mediaURL = e.Info[UIImagePickerController.MediaURL] as NSUrl;
-            //        if (mediaURL != null)
-            //        {
-            //            Console.WriteLine(mediaURL.ToString());
-            //        }
-            //    }
-            //    // dismiss the picker
-            //    imagePicker.DismissModalViewControllerAnimated(true);
-            //}
-            //void Handle_Canceled(object sender, EventArgs e)
-            //{
-            //    imagePicker.DismissModalViewControllerAnimated(true);
-            //}
-
-
-        //}
+            public Task<Stream> GetImageStreamAsync()
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }
