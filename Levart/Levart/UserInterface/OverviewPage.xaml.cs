@@ -33,8 +33,17 @@ namespace Levart.UserInterface
 
 		async void OnNewPhotoClicked(object sender, EventArgs e)
 		{
-			var action = await DisplayActionSheet("ActionSheet: Do you wanna add a new photo?", "Cancel", null, "Camera", "Photo Libary");
+			var action = await DisplayActionSheet("Do you wanna add a new photo?", "Cancel", null, "Camera", "Photo Libary");
 			Debug.WriteLine("Action: " + action);
+            switch (action) {
+                case "Camera":
+                    
+                    break;
+                case "Photo Libary":
+                    break;
+            }
 		}
+
+
     }
 }
