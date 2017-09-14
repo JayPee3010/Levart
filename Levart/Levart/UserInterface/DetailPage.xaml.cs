@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-using UIKit;
+//using UIKit;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using Foundation;

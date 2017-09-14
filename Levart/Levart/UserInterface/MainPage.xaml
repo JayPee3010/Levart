@@ -9,20 +9,35 @@
         <ToolbarItem Text="New" Clicked="MenuItem_OnClicked"/>
     </ContentPage.ToolbarItems>
 
-    <ListView x:Name="albumListView" ItemSelected="OnItemSelected"  HorizontalOptions="Center">
-        <!--ListView.Header>
-            <Label XAlign="Center" FontSize="Medium"  Text="Albums" />
-        </-->
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout Orientation ="Vertical" Padding="10">
-                        <Label XAlign="Center" Text="{Binding Name}"/>
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+    <StackLayout>
+        <Button x:Name="TakePictureButton"
+                Clicked="TakePictureButton_Clicked"
+                Text="Take from Camera"/>
+        <Button x:Name="UploadPictureButton"
+                Clicked="UploadPictureButton_Clicked"
+                Text="Pick a photo"/>
+
+        <Image x:Name="Image1" HeightRequest="240" />
+    
+
+        <ListView x:Name="albumListView" ItemSelected="OnItemSelected"  HorizontalOptions="Center">
+            <!--ListView.Header>
+                <Label XAlign="Center" FontSize="Medium"  Text="Albums" />
+            </-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation ="Vertical" Padding="10">
+                            <Label XAlign="Center" Text="{Binding Name}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </StackLayout>
+
+
 
 
 </ContentPage>
