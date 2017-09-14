@@ -6,11 +6,56 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Levart.UserInterface;
+using Plugin.Media;
+using System.IO;
+using Plugin.Media.Abstractions;
 
 namespace Levart
 {
     public partial class MainPage : ContentPage
     {
+        private async void TakePictureButton_Clicked(object sender, EventArgs e)
+        {
+            await CrossMedia.Current.Initialize();
+
+            if(!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            {
+                await DisplayAlert("No Camera", "No camera available.", "OK");
+                return;
+            }
+
+            var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+            {
+                Directory = "TestAlbum",
+                SaveToAlbum = true,
+                Name = "test.jpg"
+            });
+
+            if (file == null)
+                return;
+
+            Image1.Source = ImageSource.FromStream(() => file.GetStream());
+        }
+
+        private async void UploadPictureButton_Clicked(object sender, EventArgs e)
+        {
+            if (!CrossMedia.Current.IsPickPhotoSupported)
+            {
+                await DisplayAlert("No Upload", "Picking a photo is not supported.", "OK");
+                return;
+            }
+
+            var file = await CrossMedia.Current.PickPhotoAsync();
+            if(file == null)
+            {
+                return;
+            }
+
+            Image1.Source = ImageSource.FromStream(() => file.GetStream());
+        }
+
+
+
         public class Album {
             public int ID { get; set; }
             public string Name { get; set; }

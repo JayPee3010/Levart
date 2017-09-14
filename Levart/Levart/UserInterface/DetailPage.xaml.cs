@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using UIKit;
+//using UIKit;
 using Xamarin.Forms;
 
 namespace Levart.UserInterface
