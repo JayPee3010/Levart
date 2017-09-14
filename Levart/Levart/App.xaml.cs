@@ -17,6 +17,7 @@ namespace Levart
             MainPage = new NavigationPage(new DetailPage());
 
         }
+        
 
 
         protected override void OnStart()
