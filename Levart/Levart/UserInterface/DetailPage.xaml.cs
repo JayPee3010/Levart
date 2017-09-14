@@ -10,8 +10,6 @@ namespace Levart.UserInterface
 {
     public partial class DetailPage : ContentPage
     {
-        image.Source = Device.OnPlatform(
-                    iOS: ImageSource.FromFile("Images/corgi.png"),
-            Android:  ImageSource.FromFile("corgi.png"),
-            WinPhone: ImageSource.FromFile("Images/corgi.png"));    }
+
+    }
 }
