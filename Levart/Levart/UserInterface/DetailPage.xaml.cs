@@ -3,11 +3,10 @@ using System.IO;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using System.Threading.Tasks;
-using Foundation;
 
 namespace Levart.UserInterface
 {
-   /* public partial class DetailPage : ContentPage
+    public partial class DetailPage : ContentPage
     {
 
     }
