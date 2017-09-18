@@ -50,5 +50,7 @@
 	<string>LaunchScreen.storyboard</string>
 	<key>CFBundleName</key>
 	<string>Levart</string>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>Picture Picker uses photo library</string>
 </dict>
 </plist>

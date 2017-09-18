@@ -47,10 +47,10 @@ namespace Levart.UserInterface
                 throw new NotImplementedException();
             }
 
-            protected internal DetailPage()
-            {
+            //protected internal DetailPage()
+            //{
 
-            }
+            //}
         }
     }
 }
