@@ -142,9 +142,6 @@
       <HintPath>..\..\packages\Xamarin.Forms.2.3.4.270\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.iOS" />
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     <Reference Include="XLabs.Core, Version=2.0.5782.12218, Culture=neutral, PublicKeyToken=d65109b36e5040e4, processorArchitecture=MSIL">
       <HintPath>..\..\packages\XLabs.Core.2.0.5782\lib\Xamarin.iOS10\XLabs.Core.dll</HintPath>
     </Reference>
@@ -166,9 +163,6 @@
     <Reference Include="XLabs.Serialization, Version=2.0.5782.15703, Culture=neutral, PublicKeyToken=d65109b36e5040e4, processorArchitecture=MSIL">
       <HintPath>..\..\packages\XLabs.Serialization.2.0.5782\lib\Xamarin.iOS10\XLabs.Serialization.dll</HintPath>
     </Reference>
-=======
->>>>>>> f5afebb289d739c0376698afc5293b389531f001
->>>>>>> 8b2bd2e8102b0fb2b0eda5bf6bf53d83a6d68285
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\corgi.PNG" />
