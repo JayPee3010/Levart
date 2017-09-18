@@ -1,21 +1,15 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-//using UIKit;
 using Xamarin.Forms;
 using System.Threading.Tasks;
-using UIKit;
-using Foundation;
 
 namespace Levart.UserInterface
 {
     public partial class DetailPage : ContentPage
     {
-        public class PicturePickerImplementation : IPicturePicker
-        {
-            TaskCompletionSource<Stream> taskCompletionSource;
-            UIImagePickerController imagePicker;
 
+<<<<<<< HEAD
             void OnImagePickerFinishedPickingMedia(object sender, UIImagePickerMediaPickedEventArgs args)
             {
                 UIImage image = args.EditedImage ?? args.OriginalImage;
@@ -52,5 +46,7 @@ namespace Levart.UserInterface
 
             //}
         }
+=======
+>>>>>>> 8b2bd2e8102b0fb2b0eda5bf6bf53d83a6d68285
     }
 }

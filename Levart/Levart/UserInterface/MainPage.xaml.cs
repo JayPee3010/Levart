@@ -53,15 +53,8 @@ namespace Levart
 
             Image1.Source = ImageSource.FromStream(() => file.GetStream());
         }
-
-
-
-        public class Album {
-            public int ID { get; set; }
-            public string Name { get; set; }
-        }
-
-        public static ObservableCollection<Album> AlbumList = new ObservableCollection<Album> {
+        
+        public static ObservableCollection<Album> albumList = new ObservableCollection<Album> {
             new Album { ID=1, Name="Default"},
             new Album { ID=2, Name="  "},
             new Album { ID=3, Name="Gadget"},
@@ -75,12 +68,12 @@ namespace Levart
 
             Title = "Albums";
 
-            albumListView.ItemsSource = AlbumList;
+            albumListView.ItemsSource =albumList;
 
         }
 
         private void MenuItem_OnClicked(object sender, EventArgs e) {
-            AlbumList.Add(new Album { ID = 6, Name = "Test" });
+            albumList.Add(new Album { ID = 6, Name = "Test" });
         }
 
 
