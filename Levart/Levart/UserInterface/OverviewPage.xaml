@@ -8,7 +8,7 @@
     
 	<ContentPage.Content>
 <StackLayout>
-            <ScrollView>
+    <ScrollView>
    <Grid x:Name="photoGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>

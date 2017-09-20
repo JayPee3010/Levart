@@ -15,7 +15,7 @@ namespace Levart
     public partial class MainPage : ContentPage {
     
         public static ObservableCollection<Album> albumList = new ObservableCollection<Album> {
-            new Album { Name="Default" }
+            new Album { Name="Default", images=new ObservableCollection<ImageSource>{ } }
         };
 
         public MainPage() {

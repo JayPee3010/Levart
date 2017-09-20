@@ -14,15 +14,25 @@ namespace Levart.UserInterface
 
         private Album album;
 
-        //public class Image
-        //{
-        //    public string Location { get; set; }
-        //    public string Name { get; set; }
-        //}
+
+        public OverviewPage(Album a)  {
+            InitializeComponent();
+            album = a;
+            Title = album.Name;
+            DisplayAlert("images?", album.images.ToString(), "OK");
+            if (album.images != null)
+            {
+                var count = 0;
+                foreach (ImageSource image in album.images)
+                {
+                    photoGrid.Children.Add(new Image { Source = image }, count % 4, count % 4);
+                    ++count;
+                }
+            }
+        }
 
 
-
-		private async void TakePictureButton_Clicked(object sender, EventArgs e)
+        private async void TakePictureButton_Clicked(object sender, EventArgs e)
 		{
 			await CrossMedia.Current.Initialize();
 
@@ -42,8 +52,9 @@ namespace Levart.UserInterface
 			if (file == null)
 				return;
 
-			//Image1.Source = ImageSource.FromStream(() => file.GetStream());
-		}
+            album.images.Add(ImageSource.FromStream(() => file.GetStream()));
+            fillPhotoGrid();
+        }
 
 		private async void UploadPictureButton_Clicked(object sender, EventArgs e)
 		{
@@ -58,25 +69,10 @@ namespace Levart.UserInterface
 			{
 				return;
 			}
-
-			//Image1.Source = ImageSource.FromStream(() => file.GetStream());
-            photoGrid.Children.Add(new Image{Source = ImageSource.FromStream(() => file.GetStream())});
+            
+            album.images.Add(ImageSource.FromStream(() => file.GetStream()));
+            fillPhotoGrid();
 		}
-
-        public OverviewPage(Album a)
-        {
-            InitializeComponent();
-            album = a;
-            Title = album.Name;
-            System.Console.WriteLine(album);
-            if (album.images != null)
-            {
-                foreach (ImageSource image in album.images)
-                {
-                    System.Console.WriteLine(image);
-                }
-            }
-        }
 
 		async void OnNewPhotoClicked(object sender, EventArgs e)
 		{
@@ -92,6 +88,15 @@ namespace Levart.UserInterface
             }
 		}
 
+        public void fillPhotoGrid() {
+            var count = 0;
+            foreach (ImageSource image in album.images)
+            {
+                photoGrid.Children.Add(new Image { Source = image }, count%4, (int) count/4);
+                ++count;
+            }
+
+        }
 
     }
 }

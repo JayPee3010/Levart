@@ -18,7 +18,7 @@ namespace Levart.UserInterface
 
         // Save new Album
         private void SaveButtonClicked(object sender, EventArgs e) {
-            albumList.Add(new Album { Name = titleField.Text });
+            albumList.Add(new Album { Name = titleField.Text, images = new ObservableCollection<ImageSource> { } });
             Navigation.PushAsync(new MainPage(albumList));
         }
     }
