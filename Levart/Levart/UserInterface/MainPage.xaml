@@ -10,15 +10,6 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout>
-        <Button x:Name="TakePictureButton"
-                Clicked="TakePictureButton_Clicked"
-                Text="Take from Camera"/>
-        <Button x:Name="UploadPictureButton"
-                Clicked="UploadPictureButton_Clicked"
-                Text="Pick a photo"/>
-
-        <Image x:Name="Image1" HeightRequest="240" />
-
 
         <ListView x:Name="albumListView" ItemSelected="OnItemSelected"  HorizontalOptions="Center">
             <ListView.ItemTemplate>

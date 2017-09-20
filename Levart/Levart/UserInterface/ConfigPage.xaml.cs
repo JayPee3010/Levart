@@ -9,21 +9,16 @@ namespace Levart.UserInterface
 
         public static ObservableCollection<Album> albumList;
 
-        public ConfigPage(ObservableCollection<Album> list)
-        {
+        public ConfigPage(ObservableCollection<Album> list) {
             InitializeComponent();
-
             Title = "Config";
-
             albumList = list;
-
         }
 
 
         // Save new Album
-        private void SaveButtonClicked(object sender, EventArgs e)
-        {
-            albumList.Add(new Album { ID = 6, Name = titleField.Text });
+        private void SaveButtonClicked(object sender, EventArgs e) {
+            albumList.Add(new Album { Name = titleField.Text });
             Navigation.PushAsync(new MainPage(albumList));
         }
     }

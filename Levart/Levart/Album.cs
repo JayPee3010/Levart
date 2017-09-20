@@ -7,7 +7,6 @@ namespace Levart
 {
     public class Album
     {
-        public int ID { get; set; }
         public string Name { get; set; }
         public static ObservableCollection<Entry> entryList { get; set; }
     }

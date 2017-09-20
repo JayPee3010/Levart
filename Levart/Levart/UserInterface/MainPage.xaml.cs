@@ -12,65 +12,21 @@ using Plugin.Media.Abstractions;
 
 namespace Levart
 {
-    public partial class MainPage : ContentPage
-    {
-        private async void TakePictureButton_Clicked(object sender, EventArgs e)
-        {
-            await CrossMedia.Current.Initialize();
-
-            if(!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
-            {
-                await DisplayAlert("No Camera", "No camera available.", "OK");
-                return;
-            }
-
-            var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
-            {
-                Directory = "TestAlbum",
-                SaveToAlbum = true,
-                Name = "test.jpg"
-            });
-
-            if (file == null)
-                return;
-
-            Image1.Source = ImageSource.FromStream(() => file.GetStream());
-        }
-
-        private async void UploadPictureButton_Clicked(object sender, EventArgs e)
-        {
-            if (!CrossMedia.Current.IsPickPhotoSupported)
-            {
-                await DisplayAlert("No Upload", "Picking a photo is not supported.", "OK");
-                return;
-            }
-
-            var file = await CrossMedia.Current.PickPhotoAsync();
-            if(file == null)
-            {
-                return;
-            }
-
-            Image1.Source = ImageSource.FromStream(() => file.GetStream());
-        }
-        
+    public partial class MainPage : ContentPage {
+    
         public static ObservableCollection<Album> albumList = new ObservableCollection<Album> {
-            new Album { ID=1, Name="Default"}
+            new Album { Name="Default"}
         };
 
         public MainPage() {
-
             InitializeComponent();
-
             Title = "Albums";
-
             albumListView.ItemsSource = albumList;
-
         }
-        public MainPage(ObservableCollection<Album> albumList)
-        {
+        public MainPage(ObservableCollection<Album> al) {
             InitializeComponent();
-            albumListView.ItemsSource = albumList;
+            Title = "Albums";
+            albumListView.ItemsSource = al;
         }
 
         // Create new Album
