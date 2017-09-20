@@ -19,15 +19,9 @@ namespace Levart.UserInterface
             InitializeComponent();
             album = a;
             Title = album.Name;
-            DisplayAlert("images?", album.images.ToString(), "OK");
             if (album.images != null)
             {
-                var count = 0;
-                foreach (ImageSource image in album.images)
-                {
-                    photoGrid.Children.Add(new Image { Source = image }, count % 4, count % 4);
-                    ++count;
-                }
+                fillPhotoGrid();
             }
         }
 
