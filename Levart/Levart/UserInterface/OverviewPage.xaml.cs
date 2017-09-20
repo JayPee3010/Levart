@@ -11,11 +11,15 @@ namespace Levart.UserInterface
 {
     public partial class OverviewPage : ContentPage
     {
+
+        private Album album;
+
         public class Image
         {
             public string Location { get; set; }
             public string Name { get; set; }
         }
+
 
         public static ObservableCollection<Image> AlbumList = new ObservableCollection<Image> {
             new Image { Location="", Name="Default"},
@@ -66,11 +70,11 @@ namespace Levart.UserInterface
 			Image1.Source = ImageSource.FromStream(() => file.GetStream());
 		}
 
-        public OverviewPage(string selectedItem)
+        public OverviewPage(Album a)
         {
             InitializeComponent();
-
-            Title = selectedItem;
+            album = a;
+            Title = album.Name;
         }
 
 		async void OnNewPhotoClicked(object sender, EventArgs e)

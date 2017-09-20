@@ -15,7 +15,7 @@ namespace Levart
     public partial class MainPage : ContentPage {
     
         public static ObservableCollection<Album> albumList = new ObservableCollection<Album> {
-            new Album { Name="Default"}
+            new Album { Name="Default" }
         };
 
         public MainPage() {
@@ -38,9 +38,10 @@ namespace Levart
         // Click on a list item (Album)
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e) {
             if(e.SelectedItem != null) {
+                var listIndex = (albumListView.ItemsSource as ObservableCollection<Album>).IndexOf(e.SelectedItem as Album);
                 var selection = e.SelectedItem as Album;
                 ((ListView)sender).SelectedItem = null; // reset the selected item
-                Navigation.PushAsync(new OverviewPage(selection.Name));
+                Navigation.PushAsync(new OverviewPage(albumList[listIndex]));
             }
         }
 	}
