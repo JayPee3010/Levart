@@ -14,20 +14,12 @@ namespace Levart.UserInterface
 
         private Album album;
 
-        public class Image
-        {
-            public string Location { get; set; }
-            public string Name { get; set; }
-        }
+        //public class Image
+        //{
+        //    public string Location { get; set; }
+        //    public string Name { get; set; }
+        //}
 
-
-        public static ObservableCollection<Image> AlbumList = new ObservableCollection<Image> {
-            new Image { Location="", Name="Default"},
-            new Image { Location="", Name="  "},
-            new Image { Location="", Name="Gadget"},
-            new Image { Location="", Name="Cog"},
-            new Image { Location="", Name="Sprocket"}
-        };
 
 
 		private async void TakePictureButton_Clicked(object sender, EventArgs e)
@@ -50,7 +42,7 @@ namespace Levart.UserInterface
 			if (file == null)
 				return;
 
-			Image1.Source = ImageSource.FromStream(() => file.GetStream());
+			//Image1.Source = ImageSource.FromStream(() => file.GetStream());
 		}
 
 		private async void UploadPictureButton_Clicked(object sender, EventArgs e)
@@ -67,7 +59,8 @@ namespace Levart.UserInterface
 				return;
 			}
 
-			Image1.Source = ImageSource.FromStream(() => file.GetStream());
+			//Image1.Source = ImageSource.FromStream(() => file.GetStream());
+            photoGrid.Children.Add(new Image{Source = ImageSource.FromStream(() => file.GetStream())});
 		}
 
         public OverviewPage(Album a)
@@ -75,6 +68,14 @@ namespace Levart.UserInterface
             InitializeComponent();
             album = a;
             Title = album.Name;
+            System.Console.WriteLine(album);
+            if (album.images != null)
+            {
+                foreach (ImageSource image in album.images)
+                {
+                    System.Console.WriteLine(image);
+                }
+            }
         }
 
 		async void OnNewPhotoClicked(object sender, EventArgs e)

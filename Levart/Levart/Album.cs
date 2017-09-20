@@ -10,6 +10,6 @@ namespace Levart
     {
         public string Name { get; set; }
         //public static ObservableCollection<Entry> entryList { get; set; }
-        public static ObservableCollection<ImageSource> images { get; set; }
+        public ObservableCollection<ImageSource> images { get; set; }
     }
 }
