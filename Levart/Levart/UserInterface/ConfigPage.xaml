@@ -1,13 +1,32 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="Levart.UserInterface.ConfigPage">
-    
-    
-    
-	<ContentPage.Content>
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Levart" 
+             x:Class="Levart.UserInterface.ConfigPage"
+             Padding="0, 20, 0, 0">
+
+
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <Grid Margin="0, 0, 0, 50">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="9*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label XAlign="Center" YAlign="Center" Grid.Row="0" Grid.Column="0" Text="Titel"/>
+                    <Entry x:Name="titleField" Margin="0, 0, 20, 0" Grid.Row="0" Grid.Column="1" Placeholder="Enter the Title of your Album!" />
+                </Grid>
+            </ScrollView>
+            <Button Clicked="SaveButtonClicked" BorderRadius="8" x:Name="saveAlbum" HeightRequest="50" WidthRequest="150" HorizontalOptions="Center" Text="Save Album" BackgroundColor="BurlyWood">
         
-	</ContentPage.Content>
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
     
     
     

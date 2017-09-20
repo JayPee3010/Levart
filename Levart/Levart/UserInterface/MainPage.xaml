@@ -18,12 +18,9 @@
                 Text="Pick a photo"/>
 
         <Image x:Name="Image1" HeightRequest="240" />
-    
+
 
         <ListView x:Name="albumListView" ItemSelected="OnItemSelected"  HorizontalOptions="Center">
-            <!--ListView.Header>
-                <Label XAlign="Center" FontSize="Medium"  Text="Albums" />
-            </-->
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

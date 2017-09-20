@@ -9,6 +9,6 @@ namespace Levart
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public static ObservableCollection<Entry> entryList;
+        public static ObservableCollection<Entry> entryList { get; set; }
     }
 }

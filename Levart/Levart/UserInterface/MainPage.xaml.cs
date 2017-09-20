@@ -55,11 +55,7 @@ namespace Levart
         }
         
         public static ObservableCollection<Album> albumList = new ObservableCollection<Album> {
-            new Album { ID=1, Name="Default"},
-            new Album { ID=2, Name="  "},
-            new Album { ID=3, Name="Gadget"},
-            new Album { ID=4, Name="Cog"},
-            new Album { ID=5, Name="Sprocket"}
+            new Album { ID=1, Name="Default"}
         };
 
         public MainPage() {
@@ -68,16 +64,22 @@ namespace Levart
 
             Title = "Albums";
 
-            albumListView.ItemsSource =albumList;
+            albumListView.ItemsSource = albumList;
 
         }
+        public MainPage(ObservableCollection<Album> albumList)
+        {
+            InitializeComponent();
+            albumListView.ItemsSource = albumList;
+        }
 
+        // Create new Album
         private void MenuItem_OnClicked(object sender, EventArgs e) {
-            albumList.Add(new Album { ID = 6, Name = "Test" });
+            Navigation.PushAsync(new ConfigPage(albumList));
         }
 
 
-        // Click on a list item
+        // Click on a list item (Album)
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e) {
             if(e.SelectedItem != null) {
                 var selection = e.SelectedItem as Album;
